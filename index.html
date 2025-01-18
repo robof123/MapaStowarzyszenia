@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa z Panelem Administratora</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Firebase SDK załadowane bez "type=module" -->
+    <script type="module"  src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js"></script>
+    <script type="module"  src="https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js"></script>
+    <!-- Skrypt aplikacji -->
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Interaktywna Mapa Wędkarska</h1>
+      <button id="admin-panel-btn">Panel Administratora</button>
+      <a href="reg.html"><button>Regulamin</button></a>
+    </header>
+
+    <div id="info-box">
+      Jeżeli jesteś na stanowisku, które nie jest zaznaczone na mapie, proszę
+      dodaj je, korzystając z opcji w panelu administratora.
+    </div>
+
+    <main>
+      <section id="map"></section>
+    </main>
+
+    <aside id="admin-panel">
+      <button id="close-admin-panel" aria-label="Zamknij panel">✖</button>
+      <h2>Panel Administratora</h2>
+      <button id="add-pin-btn">Dodaj Pinezkę</button>
+      <button id="delete-pin-btn">Usuń Pinezkę</button>
+    </aside>
+  </body>
+</html>

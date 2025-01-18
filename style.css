@@ -1,0 +1,179 @@
+/* Resetowanie marginesów i paddingu */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e8f5e9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Nagłówek */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+header button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+header button:hover {
+    background-color: #0056b3;
+}
+
+/* Mapa */
+#map {
+    margin-top: 20px;
+    width: 100vw;
+    height: 100vh;
+    background: url('image.png') center/contain no-repeat;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+#info-box {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 250px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-size: 14px;
+    color: #333;
+    z-index: 100;
+}
+
+/* Panel Administratora */
+#admin-panel {
+    width: 300px;
+    padding: 15px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #004d40;
+    display: none;
+}
+
+#close-admin-panel {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: red;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#close-admin-panel:hover {
+    background-color: darkred;
+}
+
+/* Przyciski */
+button {
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Pinezki */
+.pin {
+    width: 20px;
+    height: 20px;
+    background-color: #ff5733;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Info Box */
+.info-box {
+    bottom: 100%;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #007bff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info-box.active {
+    display: block;
+}
+
+.info-box input {
+    margin-bottom: 10px;
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+    #admin-panel {
+        display: none;
+    }
+
+    #map {
+        height: 50vh;
+    }
+
+    .pin {
+        width: 15px;
+        height: 15px;
+    }
+
+    #info-box {
+        position: static;
+        margin: 10px auto;
+        width: 90%;
+        text-align: center;
+    }
+}
+
+#coordinates {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
