@@ -248,19 +248,18 @@ function stopAddingPin() {
 }
 
 // Funkcja do dodawania pinezki na mapie
-// Funkcja do dodawania pinezki na mapie
 function addPinOnMap(event) {
     if (addingPin) {
-      const rect = mapElement.getBoundingClientRect(); // Pozyskuje wymiary i pozycję elementu względem strony
-      const x = ((event.clientX - rect.left) / mapElement.offsetWidth) * 100;
-      const y = ((event.clientY - rect.top) / mapElement.offsetHeight) * 100;
+        const rect = mapElement.getBoundingClientRect(); // Pozyskujemy wymiary mapy w stosunku do okna
+        const x = (event.offsetX / mapElement.offsetWidth) * 100;
+        const y = (event.offsetY / mapElement.offsetHeight) * 100;
 
         // Dodajemy prompt do wprowadzenia nazwy pinezki
         const pinName = prompt("Wprowadź nazwę pinezki:", "Nowa Pinezka");
 
         if (pinName && pinName.trim() !== "") {
-            createPin(x, y, pinName);
-            savePinToDatabase(x, y, pinName, true);
+            createPin(x, y, pinName);  // Tworzymy pinezkę na mapie
+            savePinToDatabase(x, y, pinName, true);  // Zapisujemy do bazy danych
         } else {
             alert("Musisz podać nazwę pinezki.");
         }
@@ -268,6 +267,7 @@ function addPinOnMap(event) {
         stopAddingPin();
     }
 }
+
 
 // Nasłuchiwanie zdarzeń
 addPinButton.addEventListener('click', startAddingPin);
