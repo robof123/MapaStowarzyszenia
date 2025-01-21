@@ -251,8 +251,9 @@ function stopAddingPin() {
 // Funkcja do dodawania pinezki na mapie
 function addPinOnMap(event) {
     if (addingPin) {
-        const x = (event.offsetX / mapElement.offsetWidth) * 100;
-        const y = (event.offsetY / mapElement.offsetHeight) * 100;
+      const rect = mapElement.getBoundingClientRect(); // Pozyskuje wymiary i pozycję elementu względem strony
+      const x = ((event.clientX - rect.left) / mapElement.offsetWidth) * 100;
+      const y = ((event.clientY - rect.top) / mapElement.offsetHeight) * 100;
 
         // Dodajemy prompt do wprowadzenia nazwy pinezki
         const pinName = prompt("Wprowadź nazwę pinezki:", "Nowa Pinezka");
