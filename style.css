@@ -43,15 +43,15 @@ header button:hover {
     background-color: #0056b3;
 }
 
-/* Mapa */
 #map {
-    margin-top: 20px;
-    width: 100vw;
-    height: 100vh;
-    background: url('image.png') center/contain no-repeat;
-    position: relative;
-    border: 1px solid #ccc;
+    margin-top: 0;  /* Jeśli chcesz, żeby mapa zaczynała się od samej góry */
+    width: 100vw;   /* Wypełnia całe okno */
+    height: 100vh;  /* Wypełnia całe okno */
+    background: url('image.png') center/cover no-repeat;  /* Dopasowanie tła */
+    position: relative;  /* Umożliwia ustawienie pinezek w odniesieniu do mapy */
+    border: 1px solid #ccc;  /* Jeśli chcesz obramowanie */
 }
+
 
 #info-box {
     position: absolute;
